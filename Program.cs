@@ -18,7 +18,7 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
 );
 
-
+builder.Services.AddScoped<IRepository<DiseaseInformation>, Repository<DiseaseInformation>>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
                      options.UseSqlServer(builder.Configuration.GetConnectionString("DefultConnection")));
 var app = builder.Build();
