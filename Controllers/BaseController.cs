@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExcellProgramTest.Controllers;
 
+[Route("api/[controller]")]
+[ApiController]
 public class BaseController<TEntity> : ControllerBase where TEntity : BaseModel
 {
     private readonly IRepository<TEntity> repository;
